@@ -4,6 +4,7 @@ const Activity = ({ activityData }) => {
   return (
       <div>
         <h2>Activity</h2>
+        {activityData.userId}
         <ul>
           {activityData.sessions.map(session => (
               <li key={session.day}>

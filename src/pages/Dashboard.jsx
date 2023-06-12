@@ -8,6 +8,7 @@ import Performance from '../components/Performance';
 import UserModel from "../models/UserModel";
 import ActivityModel from "../models/ActivityModel";
 import AverageModel from "../models/AverageModel";
+import PerformanceModel from "../models/PerformanceModel";
 
 const Dashboard = () => {
   const [userProfile, setUserProfile] = useState(null);
@@ -26,7 +27,6 @@ const Dashboard = () => {
         .then(activityData => {
           const formattedData = new ActivityModel(activityData);
           setUserActivity(formattedData);
-
           return ApiService.getUserAverage(userId);
         })
         .then(averageData => {
@@ -35,7 +35,8 @@ const Dashboard = () => {
           return ApiService.getUserPerformance(userId);
         })
         .then(performanceData => {
-          setUserPerformance(performanceData);
+          const formattedData = new PerformanceModel(performanceData)
+          setUserPerformance(formattedData)
         })
         .catch(error => {
           console.error('Error:', error);
