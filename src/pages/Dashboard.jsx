@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
 import ApiService from '../services/apiService';
 import Profile from '../components/Profile';
 import Activity from '../components/Activity';
@@ -10,13 +10,14 @@ import ActivityModel from "../models/ActivityModel";
 import AverageModel from "../models/AverageModel";
 import PerformanceModel from "../models/PerformanceModel";
 import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
 
 const Dashboard = () => {
   const [userProfile, setUserProfile] = useState(null);
   const [userActivity, setUserActivity] = useState(null);
   const [userAverage, setUserAverage] = useState(null);
   const [userPerformance, setUserPerformance] = useState(null);
-  const { userId } = useParams();
+  const {userId} = useParams();
 
   useEffect(() => {
     ApiService.getUserData(userId)
@@ -46,12 +47,22 @@ const Dashboard = () => {
 
   return (
       <div>
-        <Header />
-        <h1>Bonjour</h1>
-        {userProfile && <Profile userData={userProfile} />}
-        {userActivity && <Activity activityData={userActivity} />}
-        {userAverage && <Average averageData={userAverage} />}
-        {userPerformance && <Performance performanceData={userPerformance} />}
+        <div className="container">
+          <Header/>
+          <div className="main">
+            <div className="sidebar-content">
+            <Sidebar/>
+            </div>
+          <div className="content">
+            <h1>Bonjour</h1>
+            {userProfile && <Profile userData={userProfile}/>}
+            {userActivity && <Activity activityData={userActivity}/>}
+            {userAverage && <Average averageData={userAverage}/>}
+            {userPerformance && <Performance performanceData={userPerformance}/>}
+          </div>
+        </div>
+
+        </div>
       </div>
   );
 };

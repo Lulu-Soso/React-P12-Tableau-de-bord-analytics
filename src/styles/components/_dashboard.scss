@@ -1,0 +1,20 @@
+.container {
+  height: 100vh; /* Utilise la hauteur totale du navigateur */
+
+  .sidebar-content {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 120px;
+  }
+
+  .content {
+    width: calc(100% - 120px);
+    position: relative;
+    float: right;
+  }
+}
+
+
+
+
