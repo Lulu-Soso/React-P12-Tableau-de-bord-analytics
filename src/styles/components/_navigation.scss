@@ -1,0 +1,18 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  height: 91px;
+  margin-right: 60px;
+
+  li {
+    list-style-type: none;
+    margin-left: 220px;
+    font-size: 24px;
+    font-weight: 500;
+
+    a {
+      color: white;
+      cursor: pointer;
+    }
+  }
+}

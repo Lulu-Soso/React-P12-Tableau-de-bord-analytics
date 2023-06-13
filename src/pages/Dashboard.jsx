@@ -9,6 +9,7 @@ import UserModel from "../models/UserModel";
 import ActivityModel from "../models/ActivityModel";
 import AverageModel from "../models/AverageModel";
 import PerformanceModel from "../models/PerformanceModel";
+import Header from "../components/Header";
 
 const Dashboard = () => {
   const [userProfile, setUserProfile] = useState(null);
@@ -45,6 +46,7 @@ const Dashboard = () => {
 
   return (
       <div>
+        <Header />
         <h1>Bonjour</h1>
         {userProfile && <Profile userData={userProfile} />}
         {userActivity && <Activity activityData={userActivity} />}
