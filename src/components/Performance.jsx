@@ -1,21 +1,42 @@
-import React from 'react';
-import PerformanceModel from "../models/PerformanceModel";
+import React, { useEffect, useState } from 'react';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
 const Performance = ({ performanceData }) => {
-  const performanceModel = new PerformanceModel(performanceData)
+  const [rendered, setRendered] = useState(false);
+
+  useEffect(() => {
+    setRendered(true);
+  }, []);
+
+  // if (!rendered || !performanceData || !performanceData.data) {
+  if (!rendered) {
+    return null; // Ne rend rien avant le premier rendu ou si les données de performance sont manquantes
+  }
+
+  const { data, kind } = performanceData;
+
+  const radarData = data.map(item => ({
+    subject: kind[item.kind],
+    A: item.value,
+  }));
 
   return (
       <div>
-        <h2>Performance</h2>
-        <p>User ID: {performanceData.userId}</p>
-        <ul>
-          {/*{performanceData.performanceData.map((item, index) => (*/}
-          {performanceModel.performanceData.map((item, index) => (
-              <li key={index}>
-                {item.kind}: {item.value}
-              </li>
-          ))}
-        </ul>
+        {/*<ul>*/}
+        {/*  {data.map((item, index) => (*/}
+        {/*      <li key={index}>*/}
+        {/*        {kind[item.kind]}: {item.value}*/}
+        {/*      </li>*/}
+        {/*  ))}*/}
+        {/*</ul>*/}
+        <ResponsiveContainer width="100%" height={300}>
+          <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
+            <PolarGrid />
+            <PolarAngleAxis dataKey="subject" />
+            <PolarRadiusAxis />
+            <Radar name="Performance" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+          </RadarChart>
+        </ResponsiveContainer>
       </div>
   );
 };

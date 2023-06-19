@@ -5,8 +5,8 @@ import Card from "./card";
 const Profile = ({userData}) => {
   const userModel = new UserModel(userData)
   return (
-      <>
-      <p>Bonjour {userModel.firstName}</p>
+      <div className="welcome">
+      <h2>Bonjour <span>{userModel.firstName}</span></h2>
         <p>Félicitation ! Vous avez explosé vos objectifs hier </p>
       {/*<p>{userModel.calorieCount}kCal <span>Calories</span></p>*/}
       {/*<p>{userModel.proteinCount}g <span>Protéines</span></p>*/}
@@ -17,7 +17,7 @@ const Profile = ({userData}) => {
       {/*  <Card value={userModel.proteinCount} />*/}
       {/*  <Card value={userModel.carbohydrateCount} />*/}
       {/*  <Card value={userModel.lipidCount} />*/}
-      </>
+      </div>
   );
 };
 

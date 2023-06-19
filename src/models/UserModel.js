@@ -1,17 +1,19 @@
 class UserModel {
-  constructor(userProfile) {
+  constructor(userData) {
     const {
       id,
-      userInfos: { firstName, lastName, age },
+      userInfos: {firstName, lastName, age},
       todayScore,
-      keyData: { calorieCount, proteinCount, carbohydrateCount, lipidCount }
-    } = userProfile;
+      score,
+      keyData: {calorieCount, proteinCount, carbohydrateCount, lipidCount}
+    } = userData;
 
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;
     this.todayScore = todayScore;
+    this.score = score;
     this.calorieCount = calorieCount;
     this.proteinCount = proteinCount;
     this.carbohydrateCount = carbohydrateCount;
