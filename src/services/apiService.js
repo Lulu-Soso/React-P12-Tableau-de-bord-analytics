@@ -12,7 +12,8 @@ const ApiService = {
 
   getUserActivity: (userId) => {
     return axios.get(`http://localhost:3000/user/${userId}/activity`)
-        .then(response => response.data.data.sessions)
+        // .then(response => response.data.data.sessions)
+        .then(response => response.data.data)
         .catch(error => {
           console.error('Error:', error);
           throw error;
@@ -21,7 +22,7 @@ const ApiService = {
 
   getUserAverage: (userId) => {
     return axios.get(`http://localhost:3000/user/${userId}/average-sessions`)
-        .then(response => response.data.data.sessions)
+        .then(response => response.data.data)
         .catch(error => {
           console.error('Error:', error);
           throw error;

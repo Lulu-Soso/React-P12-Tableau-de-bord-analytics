@@ -1,6 +1,7 @@
 class AverageModel {
   constructor(averageData) {
-    this.sessions = averageData.map(({ day, sessionLength }) => ({
+    this.userId = averageData.userId
+    this.sessions = averageData.sessions.map(({ day, sessionLength }) => ({
       day,
       sessionLength
     }))

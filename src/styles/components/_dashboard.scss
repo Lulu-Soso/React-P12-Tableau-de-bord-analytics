@@ -63,10 +63,19 @@
 
           .box {
             width: 32%;
+            //min-width: 300px;
             background-color: #FBFBFB;
             //background-color: darkslategray;
             border-radius: 5px;
             height: 263px;
+          }
+
+          .average {
+            background-color: #FF0000;
+          }
+
+          .performance {
+            background-color: #282D30;
           }
         }
       }
@@ -79,6 +88,18 @@
       }
     }
   }
+}
+
+////////////////////////// reChart //////////////////////////
+
+.recharts-responsive-container {
+  //width: 100% !important;
+  ////margin: 0 auto !important;
+  //padding: 0;
+  //margin-top: 65px !important;
+}
+.recharts-cartesian-axis-tick {
+  //display: none;
 }
 //}
 //}

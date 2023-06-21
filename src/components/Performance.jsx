@@ -1,40 +1,55 @@
 import React, { useEffect, useState } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import PerformanceModel from "../models/PerformanceModel";
+import dataModelFactory from "../models/dataModelFactory";
 
 const Performance = ({ performanceData }) => {
+  // const performanceModel = new PerformanceModel(performanceData)
+  const performanceModel = dataModelFactory.createPerformanceModel(performanceData)
+
   const [rendered, setRendered] = useState(false);
 
   useEffect(() => {
     setRendered(true);
   }, []);
 
-  // if (!rendered || !performanceData || !performanceData.data) {
   if (!rendered) {
     return null; // Ne rend rien avant le premier rendu ou si les données de performance sont manquantes
   }
 
-  const { data, kind } = performanceData;
 
-  const radarData = data.map(item => ({
-    subject: kind[item.kind],
+  const radarData = performanceModel.performanceData.map(item => ({
+    subject: item.kind,
     A: item.value,
   }));
 
+  const formatSubject = (value) => {
+    switch (value) {
+      case 'cardio':
+        return 'Cardio';
+      case 'energy':
+        return 'Energie';
+      case 'endurance':
+        return 'Endurance';
+      case 'strength':
+        return 'Force';
+      case 'speed':
+        return 'Vitesse';
+      case 'intensity':
+        return 'Intensité';
+      default:
+        return value;
+    }
+  };
+
   return (
       <div>
-        {/*<ul>*/}
-        {/*  {data.map((item, index) => (*/}
-        {/*      <li key={index}>*/}
-        {/*        {kind[item.kind]}: {item.value}*/}
-        {/*      </li>*/}
-        {/*  ))}*/}
-        {/*</ul>*/}
-        <ResponsiveContainer width="100%" height={300}>
-          <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
+        <ResponsiveContainer width="100%" height={350}>
+          <RadarChart cx="50%" cy="39%" outerRadius="60%" data={radarData} >
             <PolarGrid />
-            <PolarAngleAxis dataKey="subject" />
+            <PolarAngleAxis dataKey="subject" tickFormatter={formatSubject}/>
             <PolarRadiusAxis />
-            <Radar name="Performance" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+            <Radar name="Performance" dataKey="A" stroke="#FF0101" fill="#FF0101" fillOpacity={0.6} />
           </RadarChart>
         </ResponsiveContainer>
       </div>

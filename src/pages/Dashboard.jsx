@@ -12,12 +12,15 @@ import ActivityModel from "../models/ActivityModel";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Card from "../components/card";
-import UserModel from "../models/UserModel";
+// import UserModel from "../models/UserModel";
 import caloriesIcon from "../assets/img/calories-icon.png"
 import proteinIcon from "../assets/img/protein-icon.png"
 import carbsIcon from "../assets/img/carbs-icon.png"
 import fatIcon from "../assets/img/fat-icon.png"
 import Score from "../components/Score";
+// import createUserModel from "../models/UserModel";
+import dataModelFactory from '../models/dataModelFactory'
+// import createUserModel from "../models/dataModelFactory";
 
 const Dashboard = () => {
   const [userProfile, setUserProfile] = useState(null);
@@ -56,7 +59,9 @@ const Dashboard = () => {
         });
   }, [userId]);
 
-  const userModel = userProfile ? new UserModel(userProfile) : null;
+  // const userModel = userProfile ? new UserModel(userProfile) : null;
+  // const userModel = userProfile ? createUserModel(userProfile) : null;
+  const userModel = userProfile ? dataModelFactory.createUserModel(userProfile) : null;
 
 
   return (
@@ -81,21 +86,13 @@ const Dashboard = () => {
                   {userActivity && <Activity activityData={userActivity}/>}
                 </div>
                 <div className="box-chart">
-                  <div className="box">
+                  <div className="box average">
                     {userAverage && <Average averageData={userAverage}/>}
                   </div>
-                  <div className="box">
-                    {/*{userPerformance && <Performance performanceData={userPerformance}/>}*/}
+                  <div className="box performance">
                     {userPerformance && <Performance performanceData={userPerformance}/>}
                   </div>
                   <div className="box">
-                    {/*<Score value={userModel?.todayScore} />*/}
-                    {/*<Score />*/}
-                    {/*{userId === '12' && <Score value={userModel?.todayScore} />}*/}
-                    {/*{userId === '18' && <Score value={userModel?.score} />}*/}
-                    {/*{userId === '12' && <Score value={userModel} useTodayScore={true} />}*/}
-                    {/*{userId === '18' && <Score value={userModel} useTodayScore={false} />}*/}
-
                     {userId === '12' && userModel && (
                         <Score
                             value={userModel.todayScore}
@@ -107,23 +104,10 @@ const Dashboard = () => {
                             value={userModel.score}
                         />
                     )}
-
-                    {/*<Score value={userId === '12' ? userModel.todayScore : userModel.score} />*/}
-
-                    {/*{userProfile && <Score userData={userProfile} />}*/}
                   </div>
                 </div>
-                {/*<div>*/}
-                {/*  <Score />*/}
-                {/*<Score userData={userModel?.todayScore} />*/}
-                {/*<Score value={userModel?.todayScore} />*/}
-                {/*</div>*/}
               </div>
               <aside className="aside">
-                {/*{userProfile && <Card img={caloriesIcon} value={userProfile.calorieCount} symbol="kCal" category="Calories"/>}*/}
-                {/*{userProfile &&<Card img={proteinIcon} value={userProfile?.proteinCount} symbol="kg" category="Protéines"/>}*/}
-                {/*{userProfile &&<Card img={carbsIcon} value={userProfile?.carbohydrateCount} symbol="kg" category="Glucides"/>}*/}
-                {/*{userProfile &&<Card img={fatIcon} value={userProfile?.lipidCount} symbol="kg" category="Lipides"/>}*/}
                 <Card img={caloriesIcon} value={userModel?.calorieCount} symbol="kCal" category="Calories"/>
                 <Card img={proteinIcon} value={userModel?.proteinCount} symbol="kg" category="Protéines"/>
                 <Card img={carbsIcon} value={userModel?.carbohydrateCount} symbol="kg" category="Glucides"/>
