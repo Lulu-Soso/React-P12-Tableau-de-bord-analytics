@@ -7,15 +7,6 @@ const Average = ({ averageData }) => {
   // const averageModel = new AverageModel(averageData)
   const averageModel = dataModelFactory.createAverageModel(averageData)
   // console.log(averageModel)
-  const [rendered, setRendered] = useState(false);
-
-  useEffect(() => {
-    setRendered(true);
-  }, []);
-
-  if (!rendered) {
-    return null; // Ne rend rien avant le premier rendu ou si les données de performance sont manquantes
-  }
 
 
   const lineChartData = averageModel.sessions.map(session => ({

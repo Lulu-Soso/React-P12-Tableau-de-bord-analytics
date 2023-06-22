@@ -5,9 +5,9 @@ import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAx
 const Activity = ({ activityData }) => {
   const activityModel = dataModelFactory.createActivityModel(activityData);
 
-  if (!activityModel) {
-    return null;
-  }
+  // if (!activityModel) {
+  //   return null;
+  // }
 
   const data = activityModel.sessions.map(session => ({
     day: new Date(session.day).getDate(),

@@ -7,16 +7,6 @@ const Performance = ({ performanceData }) => {
   // const performanceModel = new PerformanceModel(performanceData)
   const performanceModel = dataModelFactory.createPerformanceModel(performanceData)
 
-  const [rendered, setRendered] = useState(false);
-
-  useEffect(() => {
-    setRendered(true);
-  }, []);
-
-  if (!rendered) {
-    return null; // Ne rend rien avant le premier rendu ou si les données de performance sont manquantes
-  }
-
 
   const radarData = performanceModel.performanceData.map(item => ({
     subject: item.kind,
@@ -47,7 +37,7 @@ const Performance = ({ performanceData }) => {
         <ResponsiveContainer width="100%" height={350}>
           <RadarChart cx="50%" cy="39%" outerRadius="60%" data={radarData} >
             <PolarGrid />
-            <PolarAngleAxis dataKey="subject" tickFormatter={formatSubject}/>
+            <PolarAngleAxis dataKey="subject" tickFormatter={formatSubject} />
             <PolarRadiusAxis />
             <Radar name="Performance" dataKey="A" stroke="#FF0101" fill="#FF0101" fillOpacity={0.6} />
           </RadarChart>

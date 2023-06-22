@@ -5,22 +5,15 @@ import Profile from '../components/Profile';
 import Activity from '../components/Activity';
 import Average from '../components/Average';
 import Performance from '../components/Performance';
-// import UserModel from "../models/UserModel";
-import ActivityModel from "../models/ActivityModel";
-// import AverageModel from "../models/AverageModel";
-// import PerformanceModel from "../models/PerformanceModel";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Card from "../components/card";
-// import UserModel from "../models/UserModel";
 import caloriesIcon from "../assets/img/calories-icon.png"
 import proteinIcon from "../assets/img/protein-icon.png"
 import carbsIcon from "../assets/img/carbs-icon.png"
 import fatIcon from "../assets/img/fat-icon.png"
 import Score from "../components/Score";
-// import createUserModel from "../models/UserModel";
 import dataModelFactory from '../models/dataModelFactory'
-// import createUserModel from "../models/dataModelFactory";
 
 const Dashboard = () => {
   const [userProfile, setUserProfile] = useState(null);
@@ -32,26 +25,18 @@ const Dashboard = () => {
   useEffect(() => {
     ApiService.getUserData(userId)
         .then(userData => {
-          // const formattedData = new UserModel(userData);
-          // setUserProfile(formattedData);
           setUserProfile(userData);
           return ApiService.getUserActivity(userId);
         })
         .then(activityData => {
-          // const formattedData = new ActivityModel(activityData);
-          // setUserActivity(formattedData);
           setUserActivity(activityData);
           return ApiService.getUserAverage(userId);
         })
         .then(averageData => {
-          // const formattedData = new AverageModel(averageData)
-          // setUserAverage(formattedData)
           setUserAverage(averageData)
           return ApiService.getUserPerformance(userId);
         })
         .then(performanceData => {
-          // const formattedData = new PerformanceModel(performanceData){
-          // setUserPerformance(formattedData)
           setUserPerformance(performanceData);
         })
         .catch(error => {
@@ -59,16 +44,12 @@ const Dashboard = () => {
         });
   }, [userId]);
 
-  // const userModel = userProfile ? new UserModel(userProfile) : null;
-  // const userModel = userProfile ? createUserModel(userProfile) : null;
+
   const userModel = userProfile ? dataModelFactory.createUserModel(userProfile) : null;
 
 
   return (
       <>
-        {/*//   <div className="container">*/}
-
-      {/*<div className="main">*/}
         <div className="sidebar-content">
           <Sidebar/>
         </div>
@@ -116,9 +97,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        {/*</div>*/}
       </>
-      // </div>
   );
 };
 

@@ -1,38 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
-import UserModel from "../models/UserModel";
 
 const Score = ({ value }) => {
-  const [rendered, setRendered] = useState(false);
 
-  useEffect(() => {
-    setRendered(true);
-  }, []);
-
-  if (!rendered) {
-    return null; // Ne rend rien avant le premier rendu
-  }
-
-  const data = [
-    { name: 'Score', value: value },
-  ];
-
-  const style = {
-    top: '50%',
-    right: 0,
-    transform: 'translate(0, -50%)',
-    lineHeight: '24px',
+  const convertToPercentage = (value) => {
+    return Math.round(value * 100);
   };
 
+  const maxScore = 100
+  const convertedValue = convertToPercentage(value);
+  const data = [
+    { name: 'Score', value: convertedValue, fill: '#FF0000' },
+    { name: 'Score max', value: maxScore - value, fill: '#FBFBFB'}
+  ];
+
+
   return (
-      <div>
-        <ResponsiveContainer width="100%" height={300}>
-          <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={data}>
-            <RadialBar minAngle={15} label={{ position: 'insideStart', fill: '#fff' }} background clockWise dataKey="value" />
-            <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
+      <div className="score">
+        <h2>Score</h2>
+        <ResponsiveContainer width="100%" height={273}>
+          <RadialBarChart cx="50%" cy="50%" innerRadius="150%" outerRadius={0} barSize={12} data={data}>
+            <RadialBar minAngle={15}  background clockWise dataKey="value" cornerRadius={10} />
           </RadialBarChart>
         </ResponsiveContainer>
-        <p>Score: {value}</p>
+        <div className="text-score">
+          <span>{convertedValue}%</span>
+          <p>de votre objectif</p>
+        </div>
+
       </div>
   );
 };
