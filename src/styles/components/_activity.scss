@@ -1,6 +1,42 @@
 .activity {
   background-color: #FBFBFB;
-  //width: 835px;
   height: 320px;
   border-radius: 5px;
+
+  .infos-activity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+
+    .legend-activity {
+      display: flex;
+      top: 50px;
+      right: 50px;
+
+      & .kilogram,
+      & .calories {
+        color: #74798C;
+        font-size: 14px;
+        font-weight: 500;
+        margin-left: 30px;
+
+        span {
+          width: 10px;
+          height: 10px;
+          display: inline-block;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+      }
+
+      & .kilogram span {
+        background-color: #282D30;
+      }
+
+      & .calories span {
+        background-color: #E60000;
+      }
+    }
+  }
 }

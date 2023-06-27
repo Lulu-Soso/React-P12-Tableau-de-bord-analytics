@@ -49,7 +49,7 @@ const Dashboard = () => {
 
 
   return (
-      <>
+      <div className="container">
         <div className="sidebar-content">
           <Sidebar/>
         </div>
@@ -58,19 +58,19 @@ const Dashboard = () => {
             <Header/>
           </div>
           <div className="content">
-            <div className="welcome">
+            {/*<div className="welcome">*/}
               {userProfile && <Profile userData={userProfile}/>}
-            </div>
+            {/*</div>*/}
             <div className="infos-content">
               <div className="charts-content">
                 <div className="chart-activity">
                   {userActivity && <Activity activityData={userActivity}/>}
                 </div>
                 <div className="box-chart">
-                  <div className="box average">
+                  <div className="box">
                     {userAverage && <Average averageData={userAverage}/>}
                   </div>
-                  <div className="box performance">
+                  <div className="box">
                     {userPerformance && <Performance performanceData={userPerformance}/>}
                   </div>
                   <div className="box">
@@ -97,7 +97,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-      </>
+      </div>
   );
 };
 

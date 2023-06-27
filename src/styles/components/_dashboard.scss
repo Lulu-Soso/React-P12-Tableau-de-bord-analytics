@@ -1,9 +1,7 @@
-//.main {
-//  height: 100vh;
-
-
-//.container {
-  //height: 100vh; /* Utilise la hauteur totale du navigateur */
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 
   .sidebar-content {
     position: fixed;
@@ -14,95 +12,127 @@
     width: 120px;
   }
 
-.dashboard {
-  min-height: 100vh;
-  //padding: 60px 0;
+  .dashboard {
+    min-height: 100vh;
+    //padding: 60px 0;
 
 
-.top {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 10;
-}
+    .top {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
 
-  .content {
-    width: calc(100% - 120px);
-    position: relative;
-    left: 120px;
-    //float: right;
-    padding: 100px 5% 0;
-    //margin-bottom: 190px;
-    //min-height: 100vh;
-    //height: 1900px;
-
-    .infos-content {
-      display: flex;
-      justify-content: space-between;
-      //background-color: #74798C;
-      margin: 30px 0;
-
-      .charts-content {
-        width: 78%;
+    .content {
+      width: calc(100% - 120px);
+      position: relative;
+      left: 120px;
+      //float: right;
+      padding: 100px 5% 0;
+      .infos-content {
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
-        //gap: 15%;
-        //border-radius: 5px;
+        //background-color: #74798C;
+        margin: 30px 0;
 
-        .chart-activity {
-          padding: 20px;
-          background-color: #FBFBFB;
-          border-radius: 5px;
-          margin-bottom: 30px;
-        }
-
-        .box-chart {
+        .charts-content {
+          width: 78%;
           display: flex;
+          flex-direction: column;
           justify-content: space-between;
+          //gap: 15%;
+          //border-radius: 5px;
 
-          .box {
-            width: 32%;
-            //min-width: 300px;
+          .chart-activity {
+            padding: 20px;
             background-color: #FBFBFB;
-            //background-color: darkslategray;
             border-radius: 5px;
-            height: 263px;
+            margin-bottom: 30px;
           }
 
-          .average {
-            background-color: #FF0000;
-          }
+          .box-chart {
+            display: flex;
+            justify-content: space-between;
 
-          .performance {
-            background-color: #282D30;
+            .box {
+              width: 32%;
+              background-color: #FBFBFB;
+              border-radius: 5px;
+              text-align: center;
+            }
+
+            //.average {
+            //  background-color: #FF0000;
+            //}
           }
         }
-      }
 
-      .aside {
-        width: 20%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        .aside {
+          width: 20%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
       }
     }
   }
 }
 
-////////////////////////// reChart //////////////////////////
+@media (max-width: 1024px) and (max-height: 780px) {
+  .container {
+    .dashboard {
+      padding-top: 20px;
 
-.recharts-responsive-container {
-  //width: 100% !important;
-  ////margin: 0 auto !important;
-  //padding: 0;
-  //margin-top: 65px !important;
+      .welcome h2 {
+        font-size: 48px;
+        font-weight: 500;
+        //padding-top: 70px;
+        //padding-top: 20px;
+      }
+
+      .welcome p {
+        padding: 10px 0;
+      }
+
+      .content {
+        //width: calc(100% - 40px);
+        //position: relative;
+        //left: 30px;
+        //padding: 0 10% 0;
+        width: calc(100% - 60px);
+        position: relative;
+        left: 75px;
+        padding: 45px 5% 0;
+
+        .infos-content {
+          display: flex;
+          justify-content: space-between;
+          margin: 10px 0;
+
+          .activity {
+            height: 300px;
+          }
+
+          .box-chart {
+            height: 200px;
+
+            .box {
+              height: 200px;
+            }
+
+            //.average,
+            //.performance {
+            //  height: 200px !important;
+            //  text-align: center;
+            //}
+          }
+        }
+      }
+
+    }
+  }
 }
-.recharts-cartesian-axis-tick {
-  //display: none;
-}
-//}
-//}
 
 
 
