@@ -1,11 +1,10 @@
 .welcome {
-  //margin-top: 60px;
 
   h2 {
-    font-size: 48px;
+    //font-size: 48px;
+    font-size: 3em;
     font-weight: 500;
-    //padding-top: 60px;
-    padding-top: 30px;
+    padding-top: 0.5em;
 
     span {
       color: #FF0101;
@@ -13,6 +12,22 @@
   }
 
   p {
-    padding: 40px 0;
+    padding: 2.5em 0;
+    font-size: 1.1em;
+    font-weight: 400;
   }
 }
+
+@media (max-width: 1024px) and (max-height: 780px) {
+  .welcome {
+
+  h2 {
+        font-size: 2em;
+      }
+
+       p {
+        padding: 0.6em 0;
+         //font-size: 1em;
+      }
+    }
+  }

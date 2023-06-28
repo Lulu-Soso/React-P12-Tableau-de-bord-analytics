@@ -58,9 +58,7 @@ const Dashboard = () => {
             <Header/>
           </div>
           <div className="content">
-            {/*<div className="welcome">*/}
               {userProfile && <Profile userData={userProfile}/>}
-            {/*</div>*/}
             <div className="infos-content">
               <div className="charts-content">
                 <div className="chart-activity">

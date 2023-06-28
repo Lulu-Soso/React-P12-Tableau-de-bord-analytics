@@ -39,7 +39,6 @@ const Average = ({ averageData }) => {
 
   return (
       <div className="average">
-        {/*<ResponsiveContainer width="100%" height={270}>*/}
         <div className="average-container">
         <ResponsiveContainer width="100%" height={200}>
           <LineChart cx="50%" cy="47%" outerRadius="60%"

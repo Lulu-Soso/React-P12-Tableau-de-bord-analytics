@@ -14,7 +14,6 @@
 
   .dashboard {
     min-height: 100vh;
-    //padding: 60px 0;
 
 
     .top {
@@ -28,12 +27,11 @@
       width: calc(100% - 120px);
       position: relative;
       left: 120px;
-      //float: right;
       padding: 100px 5% 0;
+
       .infos-content {
         display: flex;
         justify-content: space-between;
-        //background-color: #74798C;
         margin: 30px 0;
 
         .charts-content {
@@ -41,8 +39,6 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          //gap: 15%;
-          //border-radius: 5px;
 
           .chart-activity {
             padding: 20px;
@@ -61,10 +57,6 @@
               border-radius: 5px;
               text-align: center;
             }
-
-            //.average {
-            //  background-color: #FF0000;
-            //}
           }
         }
 
@@ -81,28 +73,23 @@
 
 @media (max-width: 1024px) and (max-height: 780px) {
   .container {
+
     .dashboard {
       padding-top: 20px;
 
-      .welcome h2 {
-        font-size: 48px;
-        font-weight: 500;
-        //padding-top: 70px;
-        //padding-top: 20px;
-      }
-
-      .welcome p {
-        padding: 10px 0;
-      }
+      //.welcome h2 {
+      //  font-size: 48px;
+      //  font-weight: 500;
+      //}
+      //
+      //.welcome p {
+      //  padding: 10px 0;
+      //}
 
       .content {
-        //width: calc(100% - 40px);
-        //position: relative;
-        //left: 30px;
-        //padding: 0 10% 0;
-        width: calc(100% - 60px);
+        width: calc(100% - 90px);
         position: relative;
-        left: 75px;
+        left: 90px;
         padding: 45px 5% 0;
 
         .infos-content {
@@ -120,16 +107,9 @@
             .box {
               height: 200px;
             }
-
-            //.average,
-            //.performance {
-            //  height: 200px !important;
-            //  text-align: center;
-            //}
           }
         }
       }
-
     }
   }
 }

@@ -9,7 +9,7 @@ const Profile = ({userData}) => {
   return (
       <div className="welcome">
         <h2>Bonjour <span>{userModel.firstName}</span></h2>
-        <p>Félicitation ! Vous avez explosé vos objectifs hier </p>
+        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </div>
   );
 };
