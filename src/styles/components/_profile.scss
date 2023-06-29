@@ -1,7 +1,6 @@
 .welcome {
 
   h2 {
-    //font-size: 48px;
     font-size: 3em;
     font-weight: 500;
     padding-top: 0.5em;
@@ -21,13 +20,13 @@
 @media (max-width: 1024px) and (max-height: 780px) {
   .welcome {
 
-  h2 {
-        font-size: 2em;
-      }
+    h2 {
+      font-size: 2em;
+      padding-top: 1em;
+    }
 
-       p {
-        padding: 0.6em 0;
-         //font-size: 1em;
-      }
+    p {
+      padding: 0.6em 0;
     }
   }
+}

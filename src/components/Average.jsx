@@ -35,11 +35,25 @@ const Average = ({ averageData }) => {
     }
   };
 
+  const CustomAverageTooltip = ({ payload }) => {
+    if (payload && payload.length) {
+      const sessionLength = payload[0].payload.sessionLength;
+
+      return (
+          <div className="average-tooltip">
+            <p className="average-session-tooltip">{sessionLength} mn</p>
+          </div>
+      );
+    }
+
+    return null;
+  };
+
 
 
   return (
       <div className="average">
-        <div className="average-container">
+        <div className="average-chart">
         <ResponsiveContainer width="100%" height={200}>
           <LineChart cx="50%" cy="47%" outerRadius="60%"
               data={lineChartData}
@@ -47,12 +61,12 @@ const Average = ({ averageData }) => {
                 // top: 5,
                 right: 20,
                 left: 20,
-                bottom: 60,
+                bottom: 40,
               }}
           >
             <CartesianGrid horizontal={false} vertical={false} />
             <XAxis dataKey="day" axisLine={false} tickLine={false} tickFormatter={formatDay} tickMargin={30} tick={{fill: '#ffffff'}}  />
-            <Tooltip />
+            <Tooltip content={<CustomAverageTooltip />} />
             {/*<Legend />*/}
             <Line type="monotone" dataKey="sessionLength" stroke="#ffffff" strokeWidth={2} dot={false} />
           </LineChart>

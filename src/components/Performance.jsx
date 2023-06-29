@@ -3,7 +3,6 @@ import {PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, Responsiv
 import dataModelFactory from "../models/dataModelFactory";
 
 const Performance = ({performanceData}) => {
-  // const performanceModel = new PerformanceModel(performanceData)
   const performanceModel = dataModelFactory.createPerformanceModel(performanceData)
 
 
@@ -34,13 +33,10 @@ const Performance = ({performanceData}) => {
   return (
       <div className="performance">
         <div className="performance-chart">
-          {/*<ResponsiveContainer width="100%" height={350}>*/}
           <ResponsiveContainer width="100%" height="100%">
-            {/*<RadarChart cx="50%" cy="39%" outerRadius="60%" data={radarData}>*/}
-            {/*<RadarChart cx="47%" cy="55%" innerRadius={0} outerRadius="70%" data={radarData} >*/}
             <RadarChart cx="50%" cy="54%" innerRadius={0} outerRadius="70%" data={radarData} >
               <PolarGrid/>
-              <PolarAngleAxis dataKey="subject" tickFormatter={formatSubject}/>
+              <PolarAngleAxis dataKey="subject" tickFormatter={formatSubject} />
               <PolarRadiusAxis/>
               <Radar name="Performance" dataKey="A" stroke="#FF0101" fill="#FF0101" fillOpacity={0.6} />
             </RadarChart>

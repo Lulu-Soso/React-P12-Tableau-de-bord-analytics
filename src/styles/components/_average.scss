@@ -3,9 +3,22 @@
   height: 100%;
   border-radius: 5px;
 
-  .average-container {
+  .average-chart {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+}
+
+.average-tooltip {
+  background-color: white;
+  color: red;
+  font-size: 0.438em;
+  font-weight: 500;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0;
 }
