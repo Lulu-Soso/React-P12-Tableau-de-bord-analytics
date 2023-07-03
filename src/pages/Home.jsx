@@ -33,8 +33,6 @@ const Home = () => {
 
   return (
       <div className="home">
-        <h1>Projet 12 OpenClassrooms</h1>
-        <h2>Développez un tableau de bord d'analytics avec React</h2>
         <p className="text-choice">Sélectionnez un utilisateur :</p>
         <div className="users-home">
           <NavLink to="/dashboard/12">

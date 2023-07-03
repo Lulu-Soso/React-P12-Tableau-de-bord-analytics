@@ -3,21 +3,15 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
-  h1 {
-    margin: 30Px;
-  }
-
-  h2 {
-    margin: 20px;
-  }
+  height: 100vh;
 
   .text-choice {
     margin: 50px;
   }
 
   .users-home {
-    width: 45%;
+    width: 55%;
+    max-width: 750px;
     display: flex;
     justify-content: space-between;
 
