@@ -33,11 +33,11 @@ const Performance = ({performanceData}) => {
   return (
       <div className="performance">
         <div className="performance-chart">
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="100%" >
             <RadarChart cx="50%" cy="54%" innerRadius={0} outerRadius="70%" data={radarData} >
-              <PolarGrid/>
-              <PolarAngleAxis dataKey="subject" tickFormatter={formatSubject} />
-              <PolarRadiusAxis/>
+              <PolarGrid stroke="#ffffff" />
+              <PolarAngleAxis dataKey="subject" tickFormatter={formatSubject} stroke="#ffffff" />
+              {/*<PolarRadiusAxis/>*/}
               <Radar name="Performance" dataKey="A" stroke="#FF0101" fill="#FF0101" fillOpacity={0.6} />
             </RadarChart>
           </ResponsiveContainer>

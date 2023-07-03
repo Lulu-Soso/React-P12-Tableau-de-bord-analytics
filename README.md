@@ -1,5 +1,5 @@
 ***
-Projet 12 OpenClassrooms :
+Projet :
 
 Ce projet consiste en le développement d'un tableau de bord d'analytics utilisant React. Il permet de visualiser les données et les performances de différents utilisateurs.
 
@@ -64,7 +64,6 @@ Assurez-vous d'avoir Node.js et Yarn installés sur votre machine.
 À l'intérieur du répertoire du dépôt cloné, exécutez la commande suivante pour installer les dépendances :
 
 -> yarn install
-
 
 Une fois l'installation terminée, exécutez la commande suivante pour démarrer l'application :
 

@@ -12,17 +12,4 @@ class ActivityModel {
 export default ActivityModel;
 
 
-/////////////////////////////////////////////////////////
-// class ActivityModel {
-//   constructor(activityData) {
-//     this.sessions = activityData.map(session => ({
-//       day: session.day,
-//       kilogram: session.kilogram,
-//       calories: session.calories
-//     }));
-//   }
-// }
-//
-// export default ActivityModel;
-
 

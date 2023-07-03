@@ -12,7 +12,6 @@ const ApiService = {
 
   getUserActivity: (userId) => {
     return axios.get(`http://localhost:3000/user/${userId}/activity`)
-        // .then(response => response.data.data.sessions)
         .then(response => response.data.data)
         .catch(error => {
           console.error('Error:', error);

@@ -1,6 +1,5 @@
 import React from 'react';
 import UserModel from "../models/UserModel";
-import createUserModel from "../models/dataModelFactory";
 import dataModelFactory from "../models/dataModelFactory"
 
 const Profile = ({userData}) => {

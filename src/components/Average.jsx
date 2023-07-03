@@ -53,12 +53,15 @@ const Average = ({ averageData }) => {
 
   return (
       <div className="average">
+        <div className="average-title">
+          <p>Durée moyenne des sessions</p>
+        </div>
         <div className="average-chart">
-        <ResponsiveContainer width="100%" height={200}>
+        <ResponsiveContainer width="100%" height={150}>
           <LineChart cx="50%" cy="47%" outerRadius="60%"
               data={lineChartData}
               margin={{
-                // top: 5,
+                top: 5,
                 right: 20,
                 left: 20,
                 bottom: 40,

@@ -1,8 +1,6 @@
 import React from 'react';
-import dataModelFactory from "../models/dataModelFactory";
 
 const UserCard = ({img, name, id}) => {
-  // const userModel = dataModelFactory.createUserModel(userData);
 
   return (
       <div className="user-card">

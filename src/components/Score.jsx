@@ -18,7 +18,6 @@ const Score = ({value}) => {
   return (
       <div className="score">
         <h2>Score</h2>
-        {/*<ResponsiveContainer width="100%" height={273}>*/}
         <div className="score-container">
           <ResponsiveContainer width="100%" minHeight={200}>
             <RadialBarChart cx="50%" cy="50%" innerRadius="150%" outerRadius={0} barSize={12} data={data}>
@@ -30,7 +29,6 @@ const Score = ({value}) => {
           <span>{convertedValue}%</span>
           <p>de votre objectif</p>
         </div>
-
       </div>
   );
 };
