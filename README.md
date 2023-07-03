@@ -10,12 +10,12 @@ La page d'accueil présente une sélection de deux utilisateurs. Chacun est repr
 
 Utilisateur ID 12 / Utilisateur ID 18
 
-En cliquant sur l'un des utilisateurs, vous êtes redirigé vers leur tableau de bord respectif.
+En cliquant sur l'un des utilisateurs, vous êtes redirigé vers leur tableau de bord respectif ou page profil.
 
 ***
-Tableau de bord :
+Tableau de bord / page profil:
 
-Le tableau de bord affiche les données et les statistiques spécifiques à chaque utilisateur. Les informations disponibles peuvent inclure des graphiques, des mesures de performance, des données d'activité, etc. Chaque tableau de bord est personnalisé en fonction des données de l'utilisateur sélectionné.
+Le tableau de bord ou page profil affiche les données et les statistiques spécifiques à chaque utilisateur. Les informations disponibles peuvent inclure des graphiques, des mesures de performance, des données d'activité, etc. Chaque tableau de bord est personnalisé en fonction des données de l'utilisateur sélectionné.
 
 ***
 Installation :
@@ -40,6 +40,8 @@ Technologies utilisées :
 React
 
 React Router
+
+Axios
 
 Recharts (pour les graphiques)
 
