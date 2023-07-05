@@ -15,6 +15,7 @@ const Average = ({ averageData }) => {
   }));
 
   const formatDay = (value) => {
+    // console.log(value)
     switch (value) {
       case 1:
         return 'L';

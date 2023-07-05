@@ -11,7 +11,7 @@ const Activity = ({ activityData }) => {
     calories: session.calories,
   }));
 
-  const CustomActivityTooltip = ({ payload}) => {
+  const CustomActivityTooltip = ({payload}) => {
     if (payload && payload.length) {
       // console.log(payload)
       return (

@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Fichiers de configuration d'environnement
+.env.development
+.env.production

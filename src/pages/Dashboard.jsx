@@ -74,13 +74,13 @@ const Dashboard = () => {
                   <div className="box">
                     {userId === '12' && userModel && (
                         <Score
-                            value={userModel.todayScore}
+                            value={userModel?.todayScore}
                         />
                     )}
 
                     {userId === '18' && userModel && (
                         <Score
-                            value={userModel.score}
+                            value={userModel?.score}
                         />
                     )}
                   </div>
