@@ -1,12 +1,12 @@
 ***
 Projet :
 
-Ce projet consiste en le développement d'un tableau de bord d'analytics utilisant React. Il permet de visualiser les données et les performances de différents utilisateurs.
+Ce projet vise à développer un tableau de bord d'analytique en utilisant React, permettant de visualiser les données et les performances de divers utilisateurs, grâce à l'intégration de données provenant du back-end et à l'aide de la bibliothèque Recharts.
 
 ***
 Page d'accueil :
 
-La page d'accueil présente une sélection de deux utilisateurs. Chacun est représenté par une carte comprenant leur image de profil, leur nom et leur identifiant. Les utilisateurs disponibles sont les suivants :
+La page d'accueil présente une sélection de deux utilisateurs. Chacun est représenté par une carte comprenant leur photo de profil, leur nom et leur identifiant. Les utilisateurs disponibles sont les suivants :
 
 Utilisateur ID 12 / Utilisateur ID 18
 
@@ -70,3 +70,7 @@ Assurez-vous d'avoir Node.js et Yarn installés sur votre machine.
 Une fois l'installation terminée, exécutez la commande suivante pour démarrer l'application :
 
 -> yarn start
+
+***
+lien de la maquette Figma à respecter
+https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?type=design&node-id=0-1&mode=design&t=mb4EIvjoFN3MbvjD-0
